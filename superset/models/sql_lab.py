@@ -501,7 +501,7 @@ class TabState(AuditMixinNullable, ExtraJSONMixin, Model):
         Integer, ForeignKey("query.client_id", ondelete="SET NULL")
     )
     latest_query = relationship(
-        "Query", primaryjoin="TabState.latest_query_id == cast(Query.client_id, String)"
+        "Query", primaryjoin="TabState.latest_query_id == Query.client_id"
     )
 
     # other properties
